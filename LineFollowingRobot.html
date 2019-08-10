@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Line Following Robot</title>
+  <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body>
+	<section id="Creating Back Button">
+		<div class='w-30 pa4 h-100' style="position:fixed">
+      		<h2 class="">
+       	 		<a href="./index.html#Projects">← Back</a>
+      		</h2>
+  		</div>
+	</section>
+  
+  <!-- creating slide show of images -->
+  <section id="Slide Show Images">
+  	<style>
+  		.center{
+  			text-align: center;
+  		}
+  		.proto {
+		  display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+		.container {
+			position: relative;
+		}
+		.container .display-left{
+			position: absolute;
+			top: 50%;
+			left: 25%;
+
+		}
+		.container .display-right{
+			position: absolute;
+			top: 50%;
+			right: 350px;
+		}
+  	</style>
+  <div id="slideshow"> <h1 align="center">Autonomous Line Following Robot</h1>
+  		<div class="container">
+  			<h2>Prototype:</h2>
+		  <img class="proto" src="images\projects\prototype.JPG" style="width:50%">
+		  <img class="proto" src="images\projects\prototype2.JPG" style="width:50%">
+		  <img class="proto" src="images\projects\prototype3.JPG" style="width:50%">
+		  <img class="proto" src="images\projects\prototype4.JPG" style="width:50%">
+
+		  <button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
+		  <button class="display-right" onclick="plusDivs(1)">&#10095;</button>
+		</div>
+		<script>
+		var slideIndex = 1;
+		showDivs(slideIndex);
+		function plusDivs(n) {
+		  showDivs(slideIndex += n);
+		}
+
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("proto");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+		    x[i].style.display = "none";  
+		  }    
+		    x[slideIndex-1].style.display = "block";  
+		}
+		</script>
+      </div>
+  </section>
+  <section id="description">
+	  <div>
+	  	<h3><strong>Description:</strong></h3>
+	  	<p></p>
+	  </div>
+  </section>
+</body>
+</html>
