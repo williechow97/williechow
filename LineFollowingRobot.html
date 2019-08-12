@@ -8,80 +8,138 @@
   <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-
 </head>
 
-<body>
-	<section id="Creating Back Button">
-		<div class='w-30 pa4 h-100' style="position:fixed">
-      		<h2 class="">
-       	 		<a href="./index.html#Projects">← Back</a>
-      		</h2>
-  		</div>
+<section id="Creating Back Button">
+			<div class='w-30 pa4 h-100' style="position:fixed">
+     <h2 class="">
+       <a href="./index.html#Projects">← Back</a>
+     </h2>
+  	</div>
 	</section>
-  
-  <!-- creating slide show of images -->
-  <section id="Slide Show Images">
-  	<style>
-  		.center{
-  			text-align: center;
-  		}
-  		.proto {
-		  display: block;
-		  margin-left: auto;
-		  margin-right: auto;
-		}
-		.container {
-			position: relative;
-		}
-		.container .display-left{
-			position: absolute;
-			top: 50%;
-			left: 25%;
+<!-- making images side by side -->
+<style>
+	.row{
+		justify-content: center;
+	}
+	.column {
+	  float: left;
+	  width: 25%;
+	 	padding: 5px;
+	}
 
-		}
-		.container .display-right{
-			position: absolute;
-			top: 50%;
-			right: 350px;
-		}
-  	</style>
-  <div id="slideshow"> <h1 align="center">Autonomous Line Following Robot</h1>
+	/* Clearfix (clear floats) */
+	.row::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+</style>
+<body> 
+	<section id="circuitcomponents">
+  <div id="title"> <h1 align="center">Autonomous Line Following Robot</h1>
+  	<p align="center">An autonomous line following robot that uses a PID control and photoresistors to follow a thick, black line on a white background.</p>
+  		<div class="circuitcomp">
+  			<h2>Circuit Components:</h2>
+  			<div class="row">
+  			  <div class="column">
+  			    <img id="pid" class="comp" src="images\projects\pidcontrol.JPG" alt="PID Controls" style="width:100%" >  			  
+  			  </div>
+  			  <div class="column">
+  			    <img id="photores" class="comp" src="images\projects\photoresistors.JPG" alt="Photoresistors" style="width:100%; height:78%">
+  			  </div>
+  			 </div>
+  		</div>
+  		<section id="description">
+  		  <div>
+  		  	<h3><strong>Description:</strong></h3>
+  		  	<p>Proto-boarding and testing the PID controls and photoresistors of the robot.</p>
+  		  </div>
+  		</section>
+  	</section>	
+
+ <!-- styling slide show of images -->
+ 	<section id="Slide Show Images">
+  		  	<style>
+  		  		.center{
+  		  			text-align: center;
+  		  		}
+  		  		.proto {
+  				  display: fixed;
+  				  margin-left: auto;
+  				  margin-right: auto;
+  				}
+  						.robo{
+  							display: fixed;
+  							margin-left: auto;
+  							margin-right: auto;
+  						}
+  				.container {
+  					position: relative;
+  				}
+  				.container .display-left{
+  					position: relative;
+  					bottom: 275px;
+  					left: 25%;
+
+  				}
+  				.container .display-right{
+  					position: relative;
+  					bottom: 275px;
+  					left: 71.4%;
+  				}
+  		  	</style>
+<!-- Prototype section -->
+<h2>Prototyping Design: </h2>
+<p><font color="red">ADD solidwork files</font></p>
   		<div class="container">
-  			<h2>Prototype:</h2>
 		  <img class="proto" src="images\projects\prototype.JPG" style="width:50%">
 		  <img class="proto" src="images\projects\prototype2.JPG" style="width:50%">
 		  <img class="proto" src="images\projects\prototype3.JPG" style="width:50%">
 		  <img class="proto" src="images\projects\prototype4.JPG" style="width:50%">
 
-		  <button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
-		  <button class="display-right" onclick="plusDivs(1)">&#10095;</button>
+		  <button class="display-left" onclick="plusDivs(-1,0)">&#10094;</button>
+		  <button class="display-right" onclick="plusDivs(1,0)">&#10095;</button>
 		</div>
-		<script>
-		var slideIndex = 1;
-		showDivs(slideIndex);
-		function plusDivs(n) {
-		  showDivs(slideIndex += n);
+      </div>
+  </section>
+  <section>
+  	<h3>Description:</h3>
+  	<p>Designing chassis to housing necessary components.</p>
+  </section>
+
+  <!-- Completed Robot Section -->
+  <section id="completerobot">
+  	<h2>Completed Robot:</h2>
+  	<div class="container">
+  		<img class="robo" src="images\projects\completedRobot.JPG" style="width: 50%">
+  		<img class="robo" src="images\projects\completedRobot2.JPG" style="width: 50%">
+  		<video class="robo" style="width: 50%" controls="controls"><source src="images\projects\robo_Trim.mp4" type="video/mp4"></video>  
+
+  		<button class="display-left" onclick="plusDivs(-1,1)">&#10094;</button>
+		  <button class="display-right" onclick="plusDivs(1,1)">&#10095;</button>
+  	</div>
+  </section>
+
+  <script>
+		var slideIndex = [1,1];
+		var slideId=["proto", "robo"];
+		showDivs(1,0);
+		showDivs(1,1);
+		function plusDivs(n, num) {
+		  showDivs(slideIndex[num] += n, num);
 		}
 
-		function showDivs(n) {
+		function showDivs(n, num) {
 		  var i;
-		  var x = document.getElementsByClassName("proto");
-		  if (n > x.length) {slideIndex = 1}
-		  if (n < 1) {slideIndex = x.length}
+		  var x = document.getElementsByClassName(slideId[num]);
+		  if (n > x.length) {slideIndex[num] = 1}
+		  if (n < 1) {slideIndex[num] = x.length}
 		  for (i = 0; i < x.length; i++) {
 		    x[i].style.display = "none";  
 		  }    
-		    x[slideIndex-1].style.display = "block";  
+		    x[slideIndex[num]-1].style.display = "block";  
 		}
 		</script>
-      </div>
-  </section>
-  <section id="description">
-	  <div>
-	  	<h3><strong>Description:</strong></h3>
-	  	<p></p>
-	  </div>
-  </section>
 </body>
 </html>
