@@ -16,6 +16,7 @@ body {
 
 * {
   box-sizing: border-box;
+  
 }
 
 img {
@@ -28,6 +29,7 @@ img {
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
+
 }
 
 /* Hide the images by default */
@@ -36,7 +38,7 @@ img {
 }
 
 /* Add a pointer when hovering over the thumbnail images */
-.cursor {
+.demo {
   cursor: pointer;
 }
 
@@ -49,7 +51,7 @@ img {
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
@@ -57,10 +59,15 @@ img {
   -webkit-user-select: none;
 }
 
+/* Position the "pre button" to the left*/
+.prev{
+	left: 25%;
+}
+
 /* Position the "next button" to the right */
 .next {
-  right: 0;
   border-radius: 3px 0 0 3px;
+  left:73%;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -70,10 +77,10 @@ img {
 }
 
 /* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
+.num {
+  color: grey;
   font-size: 12px;
-  padding: 8px 12px;
+  padding: 8px 500px;
   position: absolute;
   top: 0;
 }
@@ -81,11 +88,17 @@ img {
 /* Container for image text */
 .caption-container {
   text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
+  background-color: black;
+  	width: 50%;
+  	margin: auto;
+  padding: 2px 12px;
   color: white;
 }
 
+.row{
+	display:block;
+	margin-left:30%;
+}
 .row:after {
   content: "";
   display: table;
@@ -95,7 +108,8 @@ img {
 /* Six columns side by side */
 .column {
   float: left;
-  width: 20%;
+  width: 10%;
+
 }
 
 /* Add a transparency effect for thumnbail images */
@@ -121,23 +135,23 @@ img {
 	<div class="container">
 		<div class="mySlides"> 
 			<div class="num">1/5</div>
-			<img src="images\projects\arcreactor\making1.JPG" style="width: 50%">
+			<img src="images\projects\arcreactor\making1.JPG" style="width: 350px; height: 300">
 		</div>
 		<div class="mySlides"> 
 			<div class="num">2/5</div>
-			<img src="images\projects\arcreactor\making2.JPG" style="width: 50%">
+			<img src="images\projects\arcreactor\making2.JPG" style="width: 360px; height: 300">
 		</div>
 		<div class="mySlides"> 
 			<div class="num">3/5</div>
-			<img src="images\projects\arcreactor\making3.JPG" style="width: 50%">
+			<img src="images\projects\arcreactor\making3.JPG" style="width: 370px; height: 300">
 		</div>
 		<div class="mySlides"> 
 			<div class="num">4/5</div>
-			<img src="images\projects\arcreactor\making4.JPG" style="width: 50%; height: 50%">
+			<img src="images\projects\arcreactor\making4.JPG" style="width: 340px; height: auto">
 		</div>
 		<div class="mySlides"> 
 			<div class="num">5/5</div>
-			<img src="images\projects\arcreactor\making5.JPG" style="width: 50%">
+			<img src="images\projects\arcreactor\making5.JPG" style="width: 355px; height: 320">
 		</div>
 		<a class="prev" onclick="plusSlides(-1)">❮</a>
 		<a class="next" onclick="plusSlides(1)">❯</a>
@@ -147,19 +161,19 @@ img {
   		</div>
   		<div class="row">
   			<div class="column">
-  				<img class="demo" src="images\projects\arcreactor\making1.JPG" style="width: 50%" onclick="currentSlide(1)" alt="Creating outline of reactor">
+  				<img class="demo" src="images\projects\arcreactor\making1.JPG" style="width: 100%" onclick="currentSlide(1)" alt="Creating outline of reactor">
   			</div>
   			<div class="column">
-  				<img class="demo" src="images\projects\arcreactor\making2.JPG" style="width: 50%" onclick="currentSlide(2)" alt="Making pieces into one single piece">
+  				<img class="demo" src="images\projects\arcreactor\making2.JPG" style="width: 100%" onclick="currentSlide(2)" alt="Making pieces into one single piece">
   			</div>
   			<div class="column">
-  				<img class="demo" src="images\projects\arcreactor\making3.JPG" style="width: 50%" onclick="currentSlide(3)" alt="Adjoining outter ring to inner ring">
+  				<img class="demo" src="images\projects\arcreactor\making3.JPG" style="width: 100%" onclick="currentSlide(3)" alt="Adjoining outter ring to inner ring">
   			</div>
   			<div class="column">
-  				<img class="demo" src="images\projects\arcreactor\making4.JPG" style="width: 50%" onclick="currentSlide(4)" alt="Creating center piece of reactor">
+  				<img class="demo" src="images\projects\arcreactor\making4.JPG" style="width: 100%" onclick="currentSlide(4)" alt="Creating center piece of reactor">
   			</div>
   			<div class="column">
-  				<img class="demo" src="images\projects\arcreactor\making5.JPG" style="width: 50%" onclick="currentSlide(5)" alt="Finished design">
+  				<img class="demo" src="images\projects\arcreactor\making5.JPG" style="width: 100%" onclick="currentSlide(5)" alt="Finished design">
   			</div>
   		</div>
 	</div>
