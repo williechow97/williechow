@@ -3,60 +3,71 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   <title>Capacitor Model</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
-
 </head>
 
+<style>
+	header{
+		padding-left: 5px;
+
+	}
+</style>
 <body>
-	<section id="Creating Back Button">
-		<div class='w-30 pa4 h-100' style="position:fixed">
-      		<h2 class="">
-       	 		<a href="./index.html#Projects">← Back</a>
-      		</h2>
-  		</div>
-	</section>
-  
+	<header>
+		<section id="Creating Back Button">
+			<div class='' style="position:relative">
+				<h2 class="backbutton"><a href="./index.html#Projects">← Back</a></h2>	
+				<h1 class="projecttitle" align="center">Charge Density on Parallel Plate Capacitors</h1>
+		  	</div>
+		</section>	
+	</header>
+  	
+  	
   <!-- creating slide show of images -->
   <section id="Slide Show Images">
   	<style>
+  		/*test to see if width will adjust in different windows*/
   		img{
   			max-width: 100%;
-  		}
-  		.center{
-  			text-align: center;
-  		}
-  		.mySlides {
-		  display: block;
-		  margin-left: auto;
-		  margin-right: auto;
-		}
-		.container {
-			position: relative;
-		}
-		.container .display-left{
-			position: absolute;
-			top: 50%;
-			left: 25%;
 
+  		}
+  		/*.mySlides {
+		  display: block;
+		  margin:auto;
+		}*/
+		.container {
+			display: grid;
+			grid-template-columns: .1fr minmax(25%,.70fr) .1fr;
+			grid-template-areas: "display-left mySlides display-right";
+			justify-content: center;
+			background-color: black;
 		}
-		.container .display-right{
-			position: absolute;
-			top: 50%;
-			right: 350px;
+		.display-left{
+			display:inline-block;
+			margin-top:100%;
+			width:30px;
+			height: 30px;
+			justify-self: end;
+		}
+		.display-right{
+			display:inline-block;
+			margin-top:100%;
+			width:30px;
+			height:30px;
+			justify-self:start;
+			
 		}
   	</style>
-  <div id="slideshow"> <h1 align="center">Charge Density on Parallel Plate Capacitors</h1>
+  <div id="slideshow"> 
   		<div class="container">
-		  <img class="mySlides" src="images\projects\finitecapacitormodel\capacitormodel.jpg" style="width:50%">
-		  <img class="mySlides" src="images\projects\finitecapacitormodel\capacitormodel2.jpg" style="width:50%">
-		  <img class="mySlides" src="images\projects\finitecapacitormodel\capacitormodel3.jpg" style="width:50%">
-		  <img class="mySlides" src="images\projects\finitecapacitormodel\capacitormodel4.jpg" style="width:50%">
-
-		  <button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
+  		  <button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
+		  <img class="mySlides" src="images\projects\finitecapacitormodel\capacitormodel.jpg" style="width:100%">
+		  <img class="mySlides" src="images\projects\finitecapacitormodel\capacitormodel2.jpg" style="width:100%">
+		  <img class="mySlides" src="images\projects\finitecapacitormodel\capacitormodel3.jpg" style="width:100%">
+		  <img class="mySlides" src="images\projects\finitecapacitormodel\capacitormodel4.jpg" style="width:100%"> 
 		  <button class="display-right" onclick="plusDivs(1)">&#10095;</button>
 		</div>
 		<script>
