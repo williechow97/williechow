@@ -34,10 +34,6 @@
   			max-width: 100%;
 
   		}
-  		/*.mySlides {
-		  display: block;
-		  margin:auto;
-		}*/
 		.container {
 			display: grid;
 			grid-template-columns: .1fr minmax(25%,.70fr) .1fr;
@@ -47,17 +43,17 @@
 		}
 		.display-left{
 			display:inline-block;
-			margin-top:100%;
 			width:30px;
 			height: 30px;
 			justify-self: end;
+			align-self: center;
 		}
 		.display-right{
 			display:inline-block;
-			margin-top:100%;
 			width:30px;
 			height:30px;
 			justify-self:start;
+			align-self: center;
 			
 		}
   	</style>
@@ -93,7 +89,7 @@
   <section id="description">
 	  <div>
 	  	<h3><strong>Description:</strong></h3>
-	  	<p>Modeling the charge density of a parallel plate capacitor with MatLab. Each plate has a surface area of 100cm^2 and is separated by a 10cm gap. The electric potential between each plate is 1.5V. Partitioned the plates into 1cm partitions and looked at the charge contribution of each partition. The model shows that the charge density is greater at the edges of the capacitor.</p>
+	  	<p>Modeling the charge density of a parallel plate capacitor with MatLab. Each plate has a surface area of 100cm^2 and is separated by a 10cm gap. The electric potential between each plate is 1.5V. By partitioning the plates into 1cm partitions and looking at the charge contribution of each partition, the model shows that the charge density is greater at the edges of the capacitor.</p>
 	  </div>
   </section>
 </body>
