@@ -12,6 +12,7 @@
 <style>
 	img,video{
 		max-width: 100%;
+
 	}
 </style>
 
@@ -34,21 +35,21 @@
 	<section id="final product">
 		<h2>Final Product:</h2>
 		<div class="vid">
-			<video style="width: 800px;height: 500px"  controls="controls"><source src="images\projects\audioamplifier\audiotest.MOV" type="video/mp4"></video>
+			<video style="width: 800px; height: 500px"  controls="controls"><source src="images\projects\audioamplifier\audiotest.MOV" type="video/mp4"></video>
 		</div>
 	</section>
 
 	<!-- Circuit board -->
 	<style>
 		.circuitboard{
-			display:flex;
+			display:grid;
+			grid-template-columns: minmax(160px, 400px) minmax(160px, 400px);
 			justify-content: center;
 		}
 		.schematic{
-			width: 25%;
 		}
 		.protoboard{
-			width:32.5%;
+			align-self: end; 
 		}
 		
 	</style>
@@ -57,11 +58,11 @@
 		<div class="circuitboard">
 			<figure class="schematic">
 				<img src="images\projects\audioamplifier\schematic.JPG">
-				<figcaption align="left">Schematic diagram of circuit</figcaption>
+				<figcaption align="center">Schematic diagram of circuit</figcaption>
 			</figure>
 			<figure class="protoboard">
 				<img src="images\projects\audioamplifier\AudioAmplifier.JPG">
-				<br><figcaption align="left">Protoboarded circuit</figcaption>
+				<br><figcaption align="center">Protoboarded circuit</figcaption>
 			</figure>
 		</div>
 	</section>
@@ -71,36 +72,78 @@
 		h3{
 			padding-left: 60px;
 		}
-		.row{
-			display: flex;
-			justify-content: center;
+		.container{
+			display:grid;
+			grid-template-areas: 
+						"t1 t1"
+						"b1 b2"
+						"t2 t2"
+						"b3 b4";
+		}
+		.t1{
+			grid-area: t1;
+		}
+		.t2{
+			grid-area: t2;
+		}
+		.box1{
+			grid-area: b1;
+			display: grid;
+			width: minmax(160px, 300px);
+			object-fit: cover;
+		}
+		.box2{
+			grid-area: b2;
+			display:grid;
+			width: minmax(160px, 300px);
+			object-fit: cover;
 		}
 		.EagleCAD{
-			width:25%;
+			
+		}
+		.box3{
+			grid-area: b3;
+			width: minmax(160px, 300px);
+			object-fit: cover;
+		}
+		.box4{
+			grid-area: b4;
+			width: minmax(160px, 300px);
+			object-fit: cover;
 		}
 		.PCB{
-			width:25%;
+			
+		}
+		figure{
+			width:minmax(160px,300px);
+			object-fit: cover;
 		}
 	</style>
 	<section>
 		<h2>PCB Design</h2>
-			<h3>Building circuit in EagleCAD:</h3>
-		<div class="row">
-			<figure class="EagleCAD">
-				<img src="images\projects\audioamplifier\schematic2.JPG">
-			</figure>
-			<figure class="EagleCAD">
-				<img src="images\projects\audioamplifier\PCBdesign.JPG">
-			</figure>
-		</div>
-			<h3>Final PCB and PCB circuit:</h3>
-		<div class="row">
-			<figure class="PCB">
-				<img src="images\projects\audioamplifier\printedPCB.JPG">
-			</figure>
-			<figure class="PCB">
-				<img src="images\projects\audioamplifier\finalPCB.JPG">
-			</figure>
+		<div class="container">
+				<h3 class="t1">Building circuit in EagleCAD:</h3>
+			<div class="box1">
+				<figure class="EagleCAD">
+					<img src="images\projects\audioamplifier\schematic2.JPG">
+				</figure>
+			</div>
+			<div class="box2">
+				<figure class="EagleCAD">
+					<img src="images\projects\audioamplifier\PCBdesign.JPG">
+				</figure>
+			</div>
+				<h3 class="t2">Final PCB and PCB circuit:</h3>
+			<div class="box3">
+				<figure class="PCB">
+					<img src="images\projects\audioamplifier\printedPCB.JPG">
+				</figure>
+			</div>
+			<div class="box4">
+				<figure class="PCB">
+					<img src="images\projects\audioamplifier\finalPCB.JPG">
+				</figure>
+			</div>
 		</div>
 	</section>
 </body>
